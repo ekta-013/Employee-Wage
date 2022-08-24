@@ -1,8 +1,6 @@
 package employeeWage;
 
 public class EmployeeWage {
-
-	public static void main(String[] args) {
 		//CONSTANTS
 		final int IS_FULLTIME = 1;
         final int IS_PARTTIME = 2;
@@ -10,7 +8,9 @@ public class EmployeeWage {
         final int NUM_OF_WORKING_DAYS = 20;
         final int MAX_WORKING_HRS = 100;
         
-        int workingHrs = 0; 
+    public void computeEmployeeWage() {
+       int empWage;
+       int workingHrs = 0; 
         int totalWorkingHrs = 0; 
         int totalWorkingDays = 0;
         while (totalWorkingHrs <= MAX_WORKING_HRS && totalWorkingDays <= NUM_OF_WORKING_DAYS) {
@@ -33,8 +33,15 @@ public class EmployeeWage {
         }
         totalWorkingHrs += workingHrs;
         System.out.println("Day " + totalWorkingDays + " Employee working hours= " + workingHrs);
+        
+        empWage = workingHrs * WAGE_PER_HR;
+        System.out.println("Employee working hours: " + empWage);
     }
     int totalEmpWage = totalWorkingHrs * WAGE_PER_HR;
     System.out.println("Total Emp Wage: " + totalEmpWage);
 }
+    public static void main(String[] args) {
+    	EmployeeWage obj = new EmployeeWage();
+    	obj.computeEmployeeWage();
+    }
 }
